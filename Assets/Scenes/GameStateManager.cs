@@ -1,12 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+
 public class GameStateManager : MonoBehaviour
 {
     public GameObject prefab;
     public int howMany;
+    private int score;
 
     // Use this for initialization
     void Start()
@@ -29,10 +30,26 @@ public class GameStateManager : MonoBehaviour
             am.rotz = Random.Range(-3, 3);
         }
     }
-
-    // Update is called once per frame
+    // Update is called once per frame//
     void Update()
     {
 
     }
+
+    public int getScore()
+    {
+        return score;
+    }
+
+    public void setScore(int s)
+    {
+        score = s;
+    }
+
+    public void adjustScore(int s)
+    {
+        score += s;
+        Debug.Log("Score is " + score);
+    }
+
 }
